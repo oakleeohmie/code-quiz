@@ -1,4 +1,9 @@
 var startButton = document.querySelector("#start");
+function Quiz(questions) {
+    this.score = 0;
+    this.questions = questions;
+    this.questionIndex = 0;
+}
 var questions = [
     {
         title: "Commonly used data types DO NOT include:",
@@ -16,6 +21,11 @@ var questions = [
         answer: "function"
     }
 ];
+function Question(title, choices, answer) {
+    this.title = title;
+    this.choices = choices;
+    this.answer = answer;
+}
 function startTimer() {
     function startTimer() {
         setTime();
@@ -32,8 +42,12 @@ function startTimer() {
         if (timeleft <= 0) {
             clearInterval(downloadTimer);
             document.getElementById("timer").innerHTML = "Finished"
+
         }
     }, 1000);
 }
-
 startButton.addEventListener("click", startTimer);
+
+for (i = 0; i < questions.length; i++) {
+    textContent = (questions[index]);
+}
