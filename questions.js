@@ -1,3 +1,4 @@
+var startButton = document.querySelector("#start");
 var questions = [
     {
         title: "Commonly used data types DO NOT include:",
@@ -15,3 +16,24 @@ var questions = [
         answer: "function"
     }
 ];
+function startTimer() {
+    function startTimer() {
+        setTime();
+
+        interval = setInterval(function () {
+            secondsElapsed++;
+            renderTime();
+        }, 1000);
+    }
+    var timeleft = 45;
+    var downloadTimer = setInterval(function () {
+        document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
+        timeleft -= 1;
+        if (timeleft <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById("timer").innerHTML = "Finished"
+        }
+    }, 1000);
+}
+
+startButton.addEventListener("click", startTimer);
