@@ -8,38 +8,27 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-
 </head>
 
 <body>
-    <div id="container">
-        <div id="quiz">
-
-            <div id="timer">
-                <div class="time">
-                    <div id="seconds">00 seconds remaining</div>
-                </div>
-
+    <div class="app-container" id="container">
+        <h1 style="text-align: center;">Coding Quiz Challenge!</h1>
+        <div style="text-align: center;">
+            <button type="button" id="start" class="btn btn-danger btn-lg">Start Quiz</button>
+        </div>
+        <div class="app-timer" id="timer">
+            <div class="time">
+                <div id="seconds">00 seconds remaining</div>
             </div>
-            <br>
-            <h1 style="text-align: center;">Coding Quiz Challenge!</h1>
-
-            <div style="text-align: center;">
-
-                <button type="button" id="start" class="btn btn-danger btn-lg">Start Quiz</button>
-            </div>
-
-            <p id="question"></p>
+        </div>
+        <div class="app-quiz" id="quiz">
+            <h3 id="question"></h3>
             <div class="buttons">
                 <button id="btn0" class="btn btn-dark"><span id="choice0"></span></button>
                 <button id="btn1" class="btn btn-dark"><span id="choice1"></span></button>
                 <button id="btn2" class="btn btn-dark"><span id="choice2"></span></button>
                 <button id="btn3" class="btn btn-dark"><span id="choice3"></span></button>
-
             </div>
-
-
         </div>
     </div>
     <script src="./questions.js"></script>

@@ -74,7 +74,6 @@ function showScores() {
 function startTimer() {
     function startTimer() {
         setTime();
-
         interval = setInterval(function () {
             secondsElapsed++;
             renderTime();
@@ -90,6 +89,11 @@ function startTimer() {
 
         }
     }, 1000);
+    showQuiz();
+}
+function showQuiz() {
+    const quiz = document.querySelector(".app-quiz");
+    quiz.classList.add("app-quizOn")
 }
 var questions = [
     new Question("Commonly used data types DO NOT include:", ["strings", "booleans", "alerts", "numbers"], "alerts"),

@@ -1,3 +1,36 @@
-#timer {
-    float: right !important;
+.app-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 400px;
+    flex-direction: column;
+}
+.app-timer {
+    position: fixed;
+    top: 5px;
+    right: 15px;
+}
+.app-quiz {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    visibility: hidden;
+}
+.app-quizOff {
+    visibility: hidden;
+}
+.app-quizOn {
+    visibility: visible;
+}
+.buttons {
+    width: 60%;
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
