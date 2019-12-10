@@ -45,8 +45,6 @@ function populate() {
             element.innerHTML = choices[i];
             guess("btn" + i, choices[i]);
         }
-
-        showProgress();
     }
 };
 function guess(id, guess) {
@@ -56,17 +54,9 @@ function guess(id, guess) {
         populate();
     }
 };
-
-
-function showProgress() {
-    var currentQuestionNumber = quiz.questionIndex + 1;
-    var element = document.getElementById("progress");
-    element.innerHTML = "Question " + currentQuestionNumber + " of " + quiz.questions.length;
-};
-
 function showScores() {
     var gameOverHTML = "<h1>Result</h1>";
-    gameOverHTML += "<h2 id='score'> Your scores: " + quiz.score + "</h2>";
+    gameOverHTML += "<h2 id='score'> Your score: " + quiz.score + "</h2>";
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
 };
@@ -79,7 +69,7 @@ function startTimer() {
             renderTime();
         }, 1000);
     }
-    var timeleft = 45;
+    var timeleft = 60;
     var downloadTimer = setInterval(function () {
         document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
         timeleft -= 1;
@@ -98,7 +88,8 @@ function showQuiz() {
 var questions = [
     new Question("Commonly used data types DO NOT include:", ["strings", "booleans", "alerts", "numbers"], "alerts"),
     new Question("The condition in an if / else statement is enclosed within ____.", ["quotes", "curly brackets", "parentheses", "square brackets"], "parentheses"),
-    new Question("In JavaScript, what is a block of code called that is used to perform a specific task?", ["string", "variable", "function", "declaration"], "function")
+    new Question("In JavaScript, what is a block of code called that is used to perform a specific task?", ["string", "variable", "function", "declaration"], "function"),
+    new Question("Inside which element do we put the JavaScript?", ["<js>", "<scripting>", "<javascript>", "<script>"], "<script>"),
 ];
 var quiz = new Quiz(questions);
 startButton.addEventListener("click", startTimer);
