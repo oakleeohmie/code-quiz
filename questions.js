@@ -69,7 +69,7 @@ function startTimer() {
             renderTime();
         }, 1000);
     }
-    var timeleft = 60;
+    var timeleft = 45;
     var downloadTimer = setInterval(function () {
         document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
         timeleft -= 1;
@@ -89,7 +89,6 @@ var questions = [
     new Question("Commonly used data types DO NOT include:", ["strings", "booleans", "alerts", "numbers"], "alerts"),
     new Question("The condition in an if / else statement is enclosed within ____.", ["quotes", "curly brackets", "parentheses", "square brackets"], "parentheses"),
     new Question("In JavaScript, what is a block of code called that is used to perform a specific task?", ["string", "variable", "function", "declaration"], "function"),
-    new Question("Inside which element do we put the JavaScript?", ["<js>", "<scripting>", "<javascript>", "<script>"], "<script>"),
 ];
 var quiz = new Quiz(questions);
 startButton.addEventListener("click", startTimer);
