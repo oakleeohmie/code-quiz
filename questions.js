@@ -1,5 +1,5 @@
 var startButton = document.querySelector("#start");
-var timeLeft = 45
+var timeLeft = 60
 
 function Quiz(questions) {
     this.score = 0;
@@ -115,9 +115,9 @@ function hideButton() {
 };
 var questions = [
     new Question("Commonly used data types DO NOT include:", ["strings", "booleans", "alerts", "numbers"], "alerts"),
-    new Question("The condition in an if / else statement is enclosed within ____.", ["quotes", "curly brackets", "parentheses", "square brackets"], "parentheses"),
+    new Question("The condition in an if / else statement is enclosed within ____.", ["quotes", "parentheses", "curly brackets", "square brackets"], "parentheses"),
     new Question("In JavaScript, what is a block of code called that is used to perform a specific task?", ["string", "variable", "function", "declaration"], "function"),
-    new Question("Which tag do we use to input JavaScript into the html?", ["<js>", "<script>", "<javascript>", "<jscript>"], "<script>"),
+    new Question("Which tag do we use to input JavaScript into the html?", ["< html >", "< script >", "< javascript >", "< body >"], "< script >"),
 ];
 
 var quiz = new Quiz(questions);
