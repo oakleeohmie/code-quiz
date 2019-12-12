@@ -65,6 +65,10 @@ function showScores() {
     gameOverHTML += "<h2 id='score'> Your score: " + quiz.score + "</h2>";
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
+    clearInterval();
+    timeLeft = 0
+    document.getElementById("timer").innerHTML = "Finished";
+
 };
 
 function startTimer() {
@@ -97,7 +101,6 @@ function wrongAnswer() {
     else {
         deductTime();
     }
-
 };
 function showQuiz() {
     const quiz = document.querySelector(".app-quiz");
@@ -108,6 +111,7 @@ var questions = [
     new Question("The condition in an if / else statement is enclosed within ____.", ["quotes", "curly brackets", "parentheses", "square brackets"], "parentheses"),
     new Question("In JavaScript, what is a block of code called that is used to perform a specific task?", ["string", "variable", "function", "declaration"], "function"),
 ];
+
 var quiz = new Quiz(questions);
 startButton.addEventListener("click", startTimer);
 populate();
