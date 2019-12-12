@@ -115,5 +115,3 @@ var questions = [
 var quiz = new Quiz(questions);
 startButton.addEventListener("click", startTimer);
 populate();
-blah blah
-
