@@ -1,4 +1,5 @@
 var startButton = document.querySelector("#start");
+var timeLeft = 45
 
 function Quiz(questions) {
     this.score = 0;
@@ -13,6 +14,9 @@ Quiz.prototype.guess = function (answer) {
     if (this.getQuestionIndex().isCorrectAnswer(answer)) {
         this.score++;
     }
+    else {
+        timeLeft -= 15
+    }
 
     this.questionIndex++;
 }
@@ -26,6 +30,7 @@ function Question(text, choices, answer) {
     this.choices = choices;
     this.answer = answer;
 }
+
 Question.prototype.isCorrectAnswer = function (choice) {
     return this.answer === choice;
 }
@@ -46,6 +51,7 @@ function populate() {
             guess("btn" + i, choices[i]);
         }
     }
+
 };
 function guess(id, guess) {
     var button = document.getElementById(id);
@@ -69,11 +75,10 @@ function startTimer() {
             renderTime();
         }, 1000);
     }
-    var timeleft = 45;
     var downloadTimer = setInterval(function () {
-        document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
-        timeleft -= 1;
-        if (timeleft <= 0) {
+        document.getElementById("timer").innerHTML = timeLeft + " seconds remaining";
+        timeLeft -= 1;
+        if (timeLeft <= 0) {
             clearInterval(downloadTimer);
             document.getElementById("timer").innerHTML = "Finished"
 
@@ -81,19 +86,18 @@ function startTimer() {
     }, 1000);
     showQuiz();
 };
+function deductTime() {
+    timeLeft -= 15;
+    document.getElementById("timer").innerHTML = timeLeft + " seconds remaining";
+};
 function wrongAnswer() {
-    var timeleft = 45;
-    var deductTime = setInterval(function () {
-        document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
-        timeleft -= 15;
-    }, 1000);
-    if (answer === true) {
+    if (answer == guess) {
         return null;
     }
     else {
         deductTime();
     }
-    wrongAnswer();
+
 };
 function showQuiz() {
     const quiz = document.querySelector(".app-quiz");
