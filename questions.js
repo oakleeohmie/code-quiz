@@ -65,6 +65,7 @@ function showScores() {
     gameOverHTML += "<h2 id='score'> Your score: " + quiz.score + "</h2>";
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
+    // added to score function to end timer when scores are shown
     clearInterval();
     timeLeft = 0
     document.getElementById("timer").innerHTML = "Finished";
