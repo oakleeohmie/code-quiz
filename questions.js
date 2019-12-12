@@ -34,11 +34,11 @@ function populate() {
         showScores();
     }
     else {
-        // show question
+
         var element = document.getElementById("question");
         element.innerHTML = quiz.getQuestionIndex().text;
 
-        // show options
+
         var choices = quiz.getQuestionIndex().choices;
         for (var i = 0; i < choices.length; i++) {
             var element = document.getElementById("choice" + i);
@@ -80,11 +80,25 @@ function startTimer() {
         }
     }, 1000);
     showQuiz();
-}
+};
+function wrongAnswer() {
+    var timeleft = 45;
+    var deductTime = setInterval(function () {
+        document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
+        timeleft -= 15;
+    }, 1000);
+    if (answer === true) {
+        return null;
+    }
+    else {
+        deductTime();
+    }
+    wrongAnswer();
+};
 function showQuiz() {
     const quiz = document.querySelector(".app-quiz");
     quiz.classList.add("app-quizOn")
-}
+};
 var questions = [
     new Question("Commonly used data types DO NOT include:", ["strings", "booleans", "alerts", "numbers"], "alerts"),
     new Question("The condition in an if / else statement is enclosed within ____.", ["quotes", "curly brackets", "parentheses", "square brackets"], "parentheses"),
