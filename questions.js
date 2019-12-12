@@ -114,7 +114,7 @@ function hideButton() {
     quiz.classList.add("app-hideButton")
 };
 var questions = [
-    new Question("Commonly used data types DO NOT include:", ["strings", "booleans", "alerts", "numbers"], "alerts"),
+    new Question("Commonly used data types DO NOT include:", ["alerts", "booleans", "strings", "numbers"], "alerts"),
     new Question("The condition in an if / else statement is enclosed within ____.", ["quotes", "parentheses", "curly brackets", "square brackets"], "parentheses"),
     new Question("In JavaScript, what is a block of code called that is used to perform a specific task?", ["string", "variable", "function", "declaration"], "function"),
     new Question("Which tag do we use to input JavaScript into the html?", ["< html >", "< script >", "< javascript >", "< body >"], "< script >"),
