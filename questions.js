@@ -5,10 +5,10 @@ function Quiz(questions) {
     this.score = 0;
     this.questions = questions;
     this.questionIndex = 0;
-}
+};
 Quiz.prototype.getQuestionIndex = function () {
     return this.questions[this.questionIndex];
-}
+};
 
 Quiz.prototype.guess = function (answer) {
     if (this.getQuestionIndex().isCorrectAnswer(answer)) {
@@ -19,17 +19,17 @@ Quiz.prototype.guess = function (answer) {
     }
 
     this.questionIndex++;
-}
+};
 
 Quiz.prototype.isEnded = function () {
     return this.questionIndex === this.questions.length;
-}
+};
 
 function Question(text, choices, answer) {
     this.text = text;
     this.choices = choices;
     this.answer = answer;
-}
+};
 
 Question.prototype.isCorrectAnswer = function (choice) {
     return this.answer === choice;
@@ -117,6 +117,7 @@ var questions = [
     new Question("Commonly used data types DO NOT include:", ["strings", "booleans", "alerts", "numbers"], "alerts"),
     new Question("The condition in an if / else statement is enclosed within ____.", ["quotes", "curly brackets", "parentheses", "square brackets"], "parentheses"),
     new Question("In JavaScript, what is a block of code called that is used to perform a specific task?", ["string", "variable", "function", "declaration"], "function"),
+    new Question("Which tag do we use to input JavaScript into the html?", ["<js>", "<script>", "<javascript>", "<jscript>"], "<script>"),
 ];
 
 var quiz = new Quiz(questions);
