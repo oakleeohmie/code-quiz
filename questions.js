@@ -69,6 +69,7 @@ function showScores() {
     clearInterval();
     timeLeft = 0
     document.getElementById("timer").innerHTML = "Finished";
+    prompt("Please enter your initials to save your score!")
 
 };
 
