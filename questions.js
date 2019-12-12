@@ -91,6 +91,7 @@ function startTimer() {
         }
     }, 1000);
     showQuiz();
+    hideButton();
 };
 function deductTime() {
     timeLeft -= 15;
@@ -107,6 +108,10 @@ function wrongAnswer() {
 function showQuiz() {
     const quiz = document.querySelector(".app-quiz");
     quiz.classList.add("app-quizOn")
+};
+function hideButton() {
+    const quiz = document.querySelector(".app-start-button");
+    quiz.classList.add("app-hideButton")
 };
 var questions = [
     new Question("Commonly used data types DO NOT include:", ["strings", "booleans", "alerts", "numbers"], "alerts"),
