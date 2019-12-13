@@ -69,9 +69,15 @@ function showScores() {
     clearInterval();
     timeLeft = 0
     document.getElementById("timer").innerHTML = "Finished";
-    prompt("Please enter your initials to save your score!")
-
+    promptScore();
 };
+function promptScore() {
+    initial = prompt("Enter your initials to see your score!");
+    localStorage.setItem("initial", initial);
+    initial = localStorage.getItem("initial");
+    alert(initial + " score is " + quiz.score);
+};
+
 
 function startTimer() {
     function startTimer() {
