@@ -75,10 +75,8 @@ function promptScore() {
     initial = prompt("Enter your initials to see your score!");
     localStorage.setItem("initial", initial);
     initial = localStorage.getItem("initial");
-    alert(initial + " score is " + quiz.score);
+    document.getElementById("initial").innerHTML = (initial + " score = " + quiz.score);
 };
-
-
 function startTimer() {
     function startTimer() {
         setTime();
